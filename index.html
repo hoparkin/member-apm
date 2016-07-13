@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>회원등록관리</title>
+	</head>
+	<body>
+		<header>
+			<h1>리눅스와 <abbr title="Apache, PHP, Mysql">APM</abbr> 기반의 회원 등록 관리 웹</h1>
+		</header>
+		<section>
+			<article>
+				<header><abbr title="Apache, PHP, Mysql">APM</abbr> 연동 예제</header>
+				<form name="form" method="post" action="input.php">
+					<fieldset>
+						<legend>개인 정보 입력 폼</legend>
+						<table>
+							<caption></caption>
+							<tbody>
+								<tr>
+									<th><label for="lb_name">이름</label></th>
+									<td><input type="text" id="lb_name" name="name" class="inp" size="15" maxlength="20" value="홍길동"></td>
+								</tr>
+								<tr>
+									<th><label for="">주민등록번호</label></th>
+									<td>
+										<input type="text" title="주민번호 앞 6자리" name="jumin1" class="inp" size="6" maxlength="6" value="123456">
+										&nbsp;-&nbsp;
+										<input type="text" title="주민번호 뒤 7자리" name="jumin2" class="inp" size="7" maxlength="7" value="1234567">
+									</td>
+								</tr>
+								<tr>
+									<th><label for="lb_email">E-mail</label></th>
+									<td><input type="email" id="lb_email" name="email" class="inp" size="25" maxlength="30" value="examle@examle.com"></td>
+								</tr>
+								<tr>
+									<th><label for="">우편번호</label></th>
+									<td>
+										<input type="text" title="우편번호 앞 6자리" name="uno" class="inp" size="3" maxlength="3">
+										&nbsp;-&nbsp;
+										<input type="text" title="우편번호 뒤 7자리" name="uno2" class="inp" size="3" maxlength="3">
+									</td>
+								</tr>
+								<tr>
+									<th><label for="lb_address">주소</label></th>
+									<td><input type="text" id="lb_address" name="address" class="inp" size="50" maxlength="50" value="대한민국 서울특별시 강남구"></td>
+								</tr>
+								<tr>
+									<th><label for="lb_id">ID</label></th>
+									<td><input type="text" id="lb_id" name="id" class="inp" size="15" maxlength="20"></td>
+								</tr>
+								<tr>
+									<th><label for="lb_password">PASSWORD</label></th>
+									<td><input type="password" id="lb_password" name="password" class="inp" size="15" maxlength="20"></td>
+								</tr>
+							</tbody>
+						</table>
+						<input type="button" value="신청하기" onclick="check(this.form);" name="button">
+						<input type="reset" value="다시입력" name="reset">
+					</fieldset>
+				</form>
+				<footer></footer>
+			</article>
+		</section>
+		<aside></aside>
+		<footer>
+			<p>
+				작성일자 : <time datetime="2016-07-13">2016-07-13</time>
+				<br>
+				<i>Copyright(c) 2016. <b>Naheol</b> All Rights Reserved.</i>
+			</p>
+			<p>
+				참고 사이트 : <cite>리눅스포털</cite> ( <a href="www.linux.co.kr" target=_blank>www.linux.co.kr</a> ) (주)수퍼유저코리아 박성수 ( <a href="mailto:papa@superuser.co.kr">papa@superuser.co.kr</a> )
+			</p>
+		</footer>
+
+		<script>
+			function check(form) {
+				console.log('Check out!');
+				if(!form.name.value){
+					alert('이름을 입력해 주세요.');
+					form.name.focus();
+					return;
+				}
+				if(!form.jumin1.value){
+					alert('주민등록번호을 입력해 주세요.');
+					form.jumin1.focus();
+					return;
+				}
+				if(!form.jumin2.value){
+					alert('주민등록번호의 나머지 부분을 입력해 주세요.');
+					form.jumin2.focus();
+					return;
+				}
+				if(!form.email.value){
+					alert('이메일 주소를 입력해 주세요.');
+					form.email.focus();
+					return;
+				}
+				if(!form.address.value){
+					alert('상세 주소를 입력해 주세요.');
+					form.address.focus();
+					return;
+				}
+				if(!form.id.value){
+					alert('아이디를 입력해 주세요.');
+					form.id.focus();
+					return;
+				}
+				if(!form.password.value){
+					alert('비밀번호를 입력해 주세요.');
+					form.password.focus();
+					return;
+				}
+				form.submit();
+			}
+		</script>
+	</body>
+</html>
