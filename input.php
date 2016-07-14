@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>회원등록관리</title>
-	</head>
-	<body>
-		PHP 문법 준비.
-	</body>
-</html>
+<?php
+	if(!$id)
+	{
+		echo("<script>window.location.replace('index.html')</script>");
+		exit;
+	}
+
+	include "mysql_connect.inc";
+?>
